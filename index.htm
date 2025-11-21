@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Foray pharma</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.0/css/all.min.css" integrity="sha512-DxV+EoADOkOygM4IR9yXP8Sb2qwgidEmeqAEmDKIOfPRQZOWbXCzLC6vjbZyy0vPisbH2SyW27+ddLVCN+OMzQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <div class="navbar border">
+            <div class="nav_logo border">
+                <div class="logo border"></div>
+            </div>
+            
+            <div class="nav_location border">
+                <div class="location-icon">
+                    <i class="fa-solid fa-location-dot"></i>
+                    <div class="dropdown">
+                        <button class="dropbtn" placeholder="Mumbai"></button>
+                        <div class="dropdown-content"  placeholder="select location">
+                            <a href="#">Kandivali, Mumbai</a>
+                            <a href="#">Malad West, Mumbai</a>
+                            <a href="#">Kandivali West, Mumbai</a>
+                            <a href="#">Thane West, Thane</a>
+                            <a href="#">Nalasopara East, Palghar</a>
+                            <a href="#">Vashi, Navi Mumbai</a>
+                            <a href="#">Mumbai Central, Mumbai</a>
+                            <a href="#">Kandivali East, Mumbai</a>
+                            <a href="#">Panvel, Navi Mumbai</a>
+                        </div>
+                    </div>
+                </div>
+                    <!-- <input class="location-input" placeholder="Mumbai"> -->
+            </div>
+
+            <div class="nav-search border">
+                <button class="search-btn">
+                    <i class="fa-solid fa-magnifying-glass"></i>
+                </button>
+                <input type="text" class="search-bar" placeholder="Search for medicines and health products">
+            </div>
+
+            <div class="sechicon border">
+                <i class="fa-regular fa-envelope"></i>
+                <p> Leads</p>
+            </div>
+        
+            <div class="loginbtn">
+                <button class="btn">Login/ singup</button> 
+            </div>
+        </div>
+    </header>
+    <div class="slideshow-container">
+        <div class="slides">
+            <img src="/image/medical1.jpg" alt="slides 1">
+        </div>
+
+        <div class="slides">
+            <img src="/image/medical2.jpg" alt="slides 2">  
+        </div>
+
+        <div class="slides">
+            <img src="/image/medical3.jpg" alt="slides 3">
+        </div>
+
+        <div class="slides">
+            <img src="/image/medical4.jpg" alt="slides 4">
+        </div>
+
+        <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+        <a class="next" onclick="plusSlides(1)">&#10095;</a>
+    </div>
+
+    <div class="dots">
+        <span class="dot" onclick="currentSlide(1)"></span>
+        <span class="dot" onclick="currentSlide(2)"></span>
+        <span class="dot" onclick="currentSlide(3)"></span>
+        <span class="dot" onclick="currentSlide(4)"></span>
+    </div>
+
+
+
+<script src="java.js"></script>
+</body>
+</html>
