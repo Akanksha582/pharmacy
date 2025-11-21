@@ -6,13 +6,14 @@
 
 .navbar {
     height: 130px;
-    padding: 20px;
-    background-color: white;
+    /* padding: 20px; */
+    background-color: #F0EDEE;
     color: black;
     display: flex;
     align-items: center;
     justify-content: space-evenly;
-    border: 1px solid lightgray;
+    border: 1px solid #B7E9F5;
+    cursor: pointer;
     
 }
 
@@ -25,8 +26,8 @@
 
 .logo {
     background-image: url('./image/logo.png');
-    height: 110px;
-    width: 100px;
+    height: 130px;
+    width: 120px;
     background-size: cover;
 }
 
@@ -35,7 +36,7 @@
 } */
 
 .border:hover {
-    border: 1.5px solid darkgray;
+    border: 1.5px solid #B7E9F5;
 }
 
 /* box 2 */
@@ -46,7 +47,7 @@
     background-color: white;
     width: 250px;
     height: 40px;
-    border-radius: 4px;
+    border-radius: 20px;
     align-items: center;
 }
 
@@ -66,9 +67,9 @@
 .dropbtn {
     background-color: white;
     color: black;
-    width: 180px;
+    width: 240px;
     height: 40px;
-    border: 1px solid gray;
+    border: 1px solid lightcyan;
     font-size: 16px;
     cursor: pointer;
     border-radius: 4px;
@@ -114,7 +115,7 @@
 .nav-search {
     display: flex;
     justify-content: space-evenly;
-    background-color: pink;
+    background-color: transparent;
     width: 350px;
     height: 40px;
     border-radius: 4px;
@@ -122,22 +123,22 @@
 }
 
 .search-bar {
-    width: 290px;
+    width: 320px;
     height: 40px;
-    border-radius: 4px;
-    border: 1px solid gray;
+    border-radius: 20px;
+    border: 1px solid lightgray;
     font-size: 16px;
     padding: 0px 105px 0px 15px;
 }
 
 .search-btn {
     width: 40px;
-    background-color: #febd68;
+    background-color:transparent;
     justify-content: center;
     align-items: center;
     font-size: 1.5rem;
-    border-top-left-radius: 4px;
-    border-bottom-left-radius: 4px;color: #0f1111;
+    border: none;
+    color: #90DDF0;
 
 }
 
@@ -242,4 +243,14 @@ body {
 
   .active {
     background-color: #fff;
+  }
+
+  .ima-text {
+    text-align: center; 
+    font-size: 42px;
+    position: absolute;
+    color: #07393C;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
   }
