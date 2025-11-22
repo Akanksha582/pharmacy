@@ -1,23 +1,15 @@
 let slideIndex = 0;
 const slides = document.querySelectorAll(".slides");
-const dots = document.querySelectorAll(".dot");
 
 function showSlides() {
-  // Hide all slides
-  slides.forEach(slide => slide.style.display = "none");
-  dots.forEach(dot => dot.classList.remove("active"));
+  slides.forEach(slide => slide.style.display = "none");   // Hide all slides
 
-  // Move to next slide
   slideIndex++;
-  if (slideIndex > slides.length) { slideIndex = 1; }
+  if (slideIndex > slides.length) { slideIndex = 1; }  // Move to next slide
 
-  // Show current slide and activate dot
-  slides[slideIndex - 1].style.display = "block";
-  dots[slideIndex - 1].classList.add("active");
+  slides[slideIndex - 1].style.display = "block"; // Show current slide 
 
-  // Change slide every 3 seconds
-  setTimeout(showSlides, 3000);
+  setTimeout(showSlides, 3000);   // Change slide every 3 seconds
 }
 
-// Start slideshow
-showSlides();
+showSlides();// Start slideshow
