@@ -7,12 +7,12 @@
 .navbar {
     height: 130px;
     /* padding: 20px; */
-    background-color: #F0EDEE;
+    background-color: #E3F2FD;  /* Changed from #F0EDEE */
     color: black;
     display: flex;
     align-items: center;
     justify-content: space-evenly;
-    border: 1px solid #B7E9F5;
+    border: 1px solid #4FC3F7;  /* Changed from #B7E9F5 */
     cursor: pointer;
     
 }
@@ -36,7 +36,7 @@
 } */
 
 .border:hover {
-    border: 1.5px solid #B7E9F5;
+    border: 1.5px solid #4FC3F7;  /* Changed from #B7E9F5 */
 }
 
 /* box 2 */
@@ -69,7 +69,7 @@
     color: black;
     width: 240px;
     height: 40px;
-    border: 1px solid lightcyan;
+    border: 1px solid #80CBC4;  /* Changed from lightcyan */
     font-size: 16px;
     cursor: pointer;
     border-radius: 4px;
@@ -105,7 +105,7 @@
 }
 
 .dropdown:hover .dropbtn {
-    background-color: #3e8e41;
+    background-color: #00796B;  /* Changed from #3e8e41 */
     color: white;
 }
 
@@ -138,7 +138,7 @@
     align-items: center;
     font-size: 1.5rem;
     border: none;
-    color: #90DDF0;
+    color: #0288D1;  /* Changed from #90DDF0 */
 
 }
 
@@ -172,7 +172,7 @@
 .loginbtn .btn {
     width: 100%;
     height: 40px;
-    background-color: aqua;
+    background-color: #00ACC1;  /* Changed from aqua */
     color: black;
     border: none;
     font-size: 20px;
@@ -244,39 +244,42 @@ body {
   .company-nav {
     width: 100%;       /* fixed width */
     height: 450px;      /* fixed height */
-    overflow-y: scroll; /* enables vertical scroll */
     border: 1px solid #ccc;
-    scroll-behavior: smooth;
-    margin-top: 20px;
+    margin: 40px;
     padding: 10px;  
-    background-color:#FEFADC;
+    background-color:#B2DFDB;  /* Changed from #ADE8F4 */
     cursor: pointer;
-  }                             
-
-.company-nav::-webkit-scrollbar {
-  width: 8px;
-  background: none;
-}
+    overflow: hidden;  /* hide overflow content */
+    border-radius: 10px;}                             
 
 .company-nav p {
     font-size: 30px;
     font-weight: bold;
     position: fixed;
     margin-top: -12px;
+
     z-index: 1;    
 }
 .company-logos {
     display: flex;
     justify-content: space-evenly;
     align-items: center;
+    scroll-behavior: smooth;
     gap: 20px;
-    margin-top: 40px;
-    border: 1px solid black;
+    margin: 40px;
+    padding: 10px;
+    overflow-y: scroll; /* enables vertical scroll */
+    border: 1px solid #80CBC4;  /* Changed from #CAF0F8 */
 }  
+
+.company-logos::-webkit-scrollbar {
+  width: 8px;
+  background: none;
+}
 .company-logos img {
     height: 300px;
-    width: 200px;
-    border: 1px solid black;
+    width: 350px;
+    border: 1px solid #80CBC4;  /* Changed from #90E0EF */
     border-radius: 10px;
     }
 
@@ -286,4 +289,56 @@ body {
     font-weight: bold;
     text-decoration: none;
     color: black;
+}
+
+/* Categories Section */
+.categories-section {
+    margin: 40px;
+    padding: 20px;
+    background-color: #E3F2FD;  /* Light background to separate from company section */
+    border-radius: 10px;
+    text-align: center;
+}
+
+.categories-section h2 {
+    font-size: 32px;
+    color: #004D40;  /* Dark teal for title */
+    margin-bottom: 20px;
+}
+
+.categories-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));  /* Responsive grid: 3+ on desktop, fewer on smaller screens */
+    gap: 20px;
+    justify-items: center;
+}
+
+.category-card {
+    background-color: white;
+    border-radius: 15px;  /* Rounded corners */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);  /* Shadow */
+    padding: 20px;
+    text-align: center;
+    cursor: pointer;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    width: 100%;
+    max-width: 200px;
+}
+
+.category-card:hover {
+    transform: translateY(-5px);  /* Lift on hover */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.category-card img {
+    width: 100px;
+    height: 100px;
+    border-radius: 10px;
+    margin-bottom: 10px;
+}
+
+.category-card h3 {
+    font-size: 18px;
+    color: #07393C;
+    margin: 0;
 }
