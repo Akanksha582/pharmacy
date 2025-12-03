@@ -18,21 +18,20 @@
                 <div class="location-icon">
                     <i class="fa-solid fa-location-dot"></i>
                     <div class="dropdown">
-                        <button class="dropbtn" placeholder="Mumbai"></button>
-                        <div class="dropdown-content"  placeholder="select location">
-                            <a href="#">Kandivali, Mumbai</a>
-                            <a href="#">Malad West, Mumbai</a>
-                            <a href="#">Kandivali West, Mumbai</a>
-                            <a href="#">Thane West, Thane</a>
-                            <a href="#">Nalasopara East, Palghar</a>
-                            <a href="#">Vashi, Navi Mumbai</a>
-                            <a href="#">Mumbai Central, Mumbai</a>
-                            <a href="#">Kandivali East, Mumbai</a>
-                            <a href="#">Panvel, Navi Mumbai</a>
+                        <button class="dropbtn" onclick="toggleDropdown()"></button>  <!-- Removed placeholder, added onclick -->
+                        <div class="dropdown-content" id="dropdownContent">  <!-- Added id for JS targeting -->
+                            <a href="#" onclick="selectLocation('Kandivali, Mumbai')">Kandivali, Mumbai</a>
+                            <a href="#" onclick="selectLocation('Malad West, Mumbai')">Malad West, Mumbai</a>
+                            <a href="#" onclick="selectLocation('Kandivali West, Mumbai')">Kandivali West, Mumbai</a>
+                            <a href="#" onclick="selectLocation('Thane West, Thane')">Thane West, Thane</a>
+                            <a href="#" onclick="selectLocation('Nalasopara East, Palghar')">Nalasopara East, Palghar</a>
+                            <a href="#" onclick="selectLocation('Vashi, Navi Mumbai')">Vashi, Navi Mumbai</a>
+                            <a href="#" onclick="selectLocation('Mumbai Central, Mumbai')">Mumbai Central, Mumbai</a>
+                            <a href="#" onclick="selectLocation('Kandivali East, Mumbai')">Kandivali East, Mumbai</a>
+                            <a href="#" onclick="selectLocation('Panvel, Navi Mumbai')">Panvel, Navi Mumbai</a>
                         </div>
                     </div>
                 </div>
-                    <!-- <input class="location-input" placeholder="Mumbai"> -->
             </div>
 
             <div class="nav-search border">
@@ -52,6 +51,8 @@
             </div>
         </div>
     </header>
+    
+    <main>
     <div class="slideshow-container">
         <div class="slides">
             <img src="/image/medical1.jpg" alt="slides 1">
@@ -78,7 +79,7 @@
     </div>
 
     <div class="company-nav">
-        <p>Best company</p>
+        <p><i>Best company</i></p>
         <div class="company-logos">
             <div>
                 <img src="/image/Dr.Reddy's.jpg" alt="Dr.Reddy's">
@@ -112,8 +113,47 @@
                 <img src="/image/torrent.png" alt="torrent">
                 <a href="">Torrent</a>
             </div>
+        </div>
     </div>
-
+<section class="categories-section">
+    <h2>Shop by Category</h2>
+    <div class="categories-grid">
+        <div class="category-card">
+            <img src="https://via.placeholder.com/150?text=💊" alt="Tablets">  <!-- Placeholder; replace with actual image -->
+            <h3>Tablets</h3>
+        </div>
+        <div class="category-card">
+            <img src="https://via.placeholder.com/150?text=🧴" alt="Syrups">
+            <h3>Syrups</h3>
+        </div>
+        <div class="category-card">
+            <img src="https://via.placeholder.com/150?text=💉" alt="Injections">
+            <h3>Injections</h3>
+        </div>
+        <div class="category-card">
+            <img src="https://via.placeholder.com/150?text=🌿" alt="Ayurvedic">
+            <h3>Ayurvedic</h3>
+        </div>
+        <div class="category-card">
+            <img src="https://via.placeholder.com/150?text=👶" alt="Baby Care">
+            <h3>Baby Care</h3>
+        </div>
+        <div class="category-card">
+            <img src="https://via.placeholder.com/150?text=🩺" alt="Medical Devices">
+            <h3>Medical Devices</h3>
+        </div>
+        <div class="category-card">
+            <img src="https://via.placeholder.com/150?text=🧼" alt="Personal Care">
+            <h3>Personal Care</h3>
+        </div>
+        <div class="category-card">
+            <img src="https://via.placeholder.com/150?text=😷" alt="Covid Essentials">
+            <h3>Covid Essentials</h3>
+        </div>
+    </div>
+</section>
+    
+    </main>
 <script src="java.js"></script>
 </body>
 </html>
