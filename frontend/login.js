@@ -19,6 +19,8 @@ document.getElementById("loginForm").addEventListener("submit", async (e) => {
     if (res.ok) {
       localStorage.setItem("token", data.token);
       localStorage.setItem("role", data.role); // ADD THIS
+      localStorage.setItem("email", email);   // ✅ save email
+      
       if (data.role === "admin") {
         window.location.href = "admin-dashboard.html";
       } else {

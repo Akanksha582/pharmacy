@@ -1,4 +1,7 @@
 const token = localStorage.getItem("token");
+const profileName = document.getElementById("profileName");
+const profileRole = document.getElementById("profileRole");
+
 
 if(!token){
   alert("Login first");
@@ -6,19 +9,28 @@ if(!token){
 }
 
 async function loadProfile(){
-  const res = await fetch("http://localhost:5000/api/user/me", {
-    headers:{
-      Authorization: localStorage.getItem("token")
-    }
-  });
+  try{
+    const res = await fetch("http://localhost:5000/api/user/me", {
+      headers:{ Authorization: token }
+    });
 
-  const data = await res.json();
+    if(!res.ok) return;
 
-  document.getElementById("profileName").innerText = data.email;
-  document.getElementById("profileRole").innerText = data.role;
+    const data = await res.json();
+
+    profileName.innerText = data.email || "Admin";
+    profileRole.innerText = data.role || "admin";
+
+  }catch(e){
+    console.log("profile api not ready");
+  }
+  loadProfile();
+
 }
 
-loadProfile();
+function editProfile(){
+  document.getElementById("editBox").style.display = "block";
+}
 
 async function saveProfile(){
   const email = document.getElementById("newEmail").value;
@@ -27,7 +39,7 @@ async function saveProfile(){
     method:"PUT",
     headers:{
       "Content-Type":"application/json",
-      Authorization: localStorage.getItem("token")
+      Authorization: token
     },
     body: JSON.stringify({ email })
   });
@@ -36,35 +48,36 @@ async function saveProfile(){
 }
 
 
+
 // ✅ Add product
-document.getElementById("productForm")
-.addEventListener("submit", async e=>{
-  e.preventDefault();
 
-  const body = {
-    name: name.value,
-    brand: brand.value,
-    price: price.value,
-    category: category.value,
-    stock: stock.value
-  };
+const form = document.getElementById("productForm");
 
-  const res = await fetch(
-    "http://localhost:5000/api/products/add",
-    {
+if(form){
+  form.addEventListener("submit", async e=>{
+    e.preventDefault();
+
+    const body = {
+      name: document.getElementById("name").value,
+      brand: document.getElementById("brand").value,
+      price: document.getElementById("price").value,
+      category: document.getElementById("category").value,
+      stock: document.getElementById("stock").value
+    };
+
+    await fetch("http://localhost:5000/api/products/add",{
       method:"POST",
       headers:{
         "Content-Type":"application/json",
         "Authorization": token
       },
       body: JSON.stringify(body)
-    }
-  );
+    });
 
-  const data = await res.json();
-  alert("Product added");
-  loadProducts();
-});
+    alert("Product added");
+    loadProducts();
+  });
+}
 
 
 // ✅ Load products
@@ -75,7 +88,7 @@ async function loadProducts(){
 
   const data = await res.json();
 
-  document.getElementById("list").innerHTML =
+  document.getElementById("productList").innerHTML =
     data.map(p => `
       <div>
         ${p.name} — ₹${p.price}
@@ -83,4 +96,6 @@ async function loadProducts(){
     `).join("");
 }
 
+loadProfile();
 loadProducts();
+
