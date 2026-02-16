@@ -79,6 +79,16 @@ if(form){
   });
 }
 
+async function deleteProduct(id){
+  if(!confirm("Delete this product?")) return;
+
+  await fetch(`http://localhost:5000/api/products/${id}`,{
+    method:"DELETE",
+    headers:{ Authorization: token }
+  });
+
+  loadProducts();
+}
 
 // ✅ Load products
 async function loadProducts(){
@@ -90,10 +100,40 @@ async function loadProducts(){
 
   document.getElementById("productList").innerHTML =
     data.map(p => `
-      <div>
-        ${p.name} — ₹${p.price}
+      <div class= "product-row">
+        <b>${p.name} — ₹${p.price}
+        <button onclick="editProduct('${p._id}','${p.name}','${p.price}','${p.stock}')">
+          Edit
+        </button>
+
+        <button onclick="deleteProduct('${p._id}')">
+          Delete
+        </button>
       </div>
     `).join("");
+}
+async function editProduct(id,name,price,stock){
+
+  const newName = prompt("Name:", name);
+  const newPrice = prompt("Price:", price);
+  const newStock = prompt("Stock:", stock);
+
+  if(!newName) return;
+
+  await fetch(`http://localhost:5000/api/products/${id}`,{
+    method:"PUT",
+    headers:{
+      "Content-Type":"application/json",
+      Authorization: token
+    },
+    body: JSON.stringify({
+      name:newName,
+      price:newPrice,
+      stock:newStock
+    })
+  });
+
+  loadProducts();
 }
 
 loadProfile();
