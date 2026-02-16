@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Admin Dashboard</title>
+  <link rel="stylesheet" href="admin-dashboard.css">
+</head>
+<body>
+<div class="layout">
+
+  <!-- Sidebar -->
+  <div class="sidebar">
+    <div class="profile-card">
+      <img id="profilePic" src="https://via.placeholder.com/120">
+      <h3 id="profileName"></h3>
+      <p id="profileRole"></p>
+      <button onclick="editProfile()">Edit Profile</button>
+      <div id="editBox" style="display:none">
+        <input id="newEmail" placeholder="New email">
+        <button onclick="saveProfile()">Save</button>
+      </div>
+
+    </div>
+
+    <ul class="menu">
+      <li>Dashboard</li>
+      <li>Products</li>
+      <li>Orders</li>
+      <li>Settings</li>
+      <li>Logout</li>
+    </ul>
+  </div>
+
+  <!-- Main Content -->
+  <div class="main">
+    <h1>Admin Dashboard</h1>
+
+    <div class="card">
+      <h2>Add Product</h2>
+
+      <form class="product-form">
+        <input placeholder="Name">
+        <input placeholder="Brand">
+        <input placeholder="Price">
+        <input placeholder="Category">
+        <input placeholder="Stock">
+        <button>Add Product</button>
+      </form>
+    </div>
+
+    <div class="card">
+      <h2>Products</h2>
+      <div id="productList"></div>
+    </div>
+
+  </div>
+
+</div>
+
+
+<script src="admin.js"></script>
+</body>
+</html>
