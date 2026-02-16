@@ -112,3 +112,29 @@ body {
 .product-form button:hover {
   background: #1d4ed8;
 }
+
+.product-row{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  padding:10px;
+  border-bottom:1px solid #eee;
+}
+
+.product-row button{
+  margin-left:8px;
+  padding:6px 10px;
+  border:none;
+  border-radius:6px;
+  cursor:pointer;
+}
+
+.product-row button:first-of-type{
+  background:#f59e0b;
+  color:white;
+}
+
+.product-row button:last-of-type{
+  background:#ef4444;
+  color:white;
+}
