@@ -1,6 +1,8 @@
 import express from "express";
 import Product from "../models/Product.js";
 import auth from "../Middleware/auth.js";
+import upload from "../Middleware/upload.js";
+
 
 const router = express.Router();
 
@@ -8,16 +10,21 @@ const router = express.Router();
 /* =========================
    ADD PRODUCT — ADMIN ONLY
 ========================= */
-router.post("/add", auth, async (req, res) => {
+router.post("/add", auth, upload.single("image"), async (req, res) => {
 
   if(req.user.role !== "admin"){
     return res.status(403).json({ msg:"Admin only" });
   }
 
   try {
+    const body = req.body;
+
+    if (req.file) {
+      body.image = req.file.filename;
+    }
     const product = new Product(req.body);
     await product.save();
-    res.json(product);
+    res.json({msg: "Product added", product});
   } catch (err) {
     res.status(500).json({ error: err.message });
   }
