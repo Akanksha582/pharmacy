@@ -1,54 +1,80 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Admin Dashboard</title>
+  <title>Pharmacy Admin Dashboard</title>
   <link rel="stylesheet" href="admin-dashboard.css">
 </head>
+
 <body>
+
 <div class="layout">
 
   <!-- Sidebar -->
   <div class="sidebar">
+
     <div class="profile-card">
-      <img id="profilePic" src="https://via.placeholder.com/120">
-      <h3 id="profileName"></h3>
-      <p id="profileRole"></p>
+      <img id="profilePic" src="./image/profile.png">
+      <h3 id="profileName">Admin</h3>
+      <p id="profileRole">Administrator</p>
+
       <button onclick="editProfile()">Edit Profile</button>
+
       <div id="editBox" style="display:none">
         <input id="newEmail" placeholder="New email">
         <button onclick="saveProfile()">Save</button>
       </div>
-
     </div>
 
     <ul class="menu">
-      <li>Dashboard</li>
-      <li>Products</li>
-      <li>Orders</li>
-      <li>Settings</li>
-      <li>Logout</li>
+      <li class="active">Dashboard</li>
+      <li onclick="location.href='add-product.html'">Add Product</li>
+      <li onclick="location.href='admin-products.html'">All Products</li>
+      <li onclick="location.href='admin-orders.html'">Orders</li>
+      <li onclick="location.href='admin-users.html'">Users</li>
+      <li onclick="logout()">Logout</li>
     </ul>
+
   </div>
 
-  <!-- Main Content -->
+  <!-- Main -->
   <div class="main">
-    <h1>Admin Dashboard</h1>
 
-    <div class="card">
-      <h2>Add Product</h2>
-
-      <form class="product-form" id="productForm">
-        <input id="name" placeholder="Name">
-        <input id="brand" placeholder="Brand">
-        <input id="price" placeholder="Price">
-        <input id="category" placeholder="Category">
-        <input id="stock" placeholder="Stock">
-        <button>Add Product</button>
-      </form>
+    <div class="topbar">
+      <h1>Pharmacy Admin Panel</h1>
     </div>
 
+    <!-- Stats -->
+    <div class="stats">
+
+      <div class="stat-card">
+        <h3>Total Products</h3>
+        <p id="statProducts">0</p>
+      </div>
+
+      <div class="stat-card">
+        <h3>Total Users</h3>
+        <p id="statUsers">0</p>
+      </div>
+
+      <div class="stat-card">
+        <h3>Total Orders</h3>
+        <p id="statSales">0</p>
+      </div>
+
+      <div class="stat-card">
+        <h3>Total Revenue</h3>
+        <p id="statRevenue">₹0</p>
+      </div>
+
+    </div>
+
+    <!-- Products List -->
     <div class="card">
-      <h2>Products</h2>
+      <div class="card-head">
+        <h2>Latest Medicines</h2>
+        <input id="searchBox" placeholder="Search product">
+      </div>
+
       <div id="productList"></div>
     </div>
 
@@ -56,7 +82,7 @@
 
 </div>
 
-
 <script src="admin.js"></script>
+
 </body>
 </html>
